@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Cordova Back Button Example</title>
+
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+  </script>
+</head>
+
+<body onload="onLoad()">
+  <button type="button" onclick="exitFromApp()" id="ExitButton">Exit</button>
+</body>
+
+</html>

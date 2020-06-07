@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>e-wallet</title>
+  <!-- Bootstrap core CSS -->
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+
+  </script>
+
+</head>
+<style>
+  .active {
+    color: #ffc107;
+  }
+</style>
+
+<body id="page-top" onload="onLoad()">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-arrow-circle-left text-primary"
+          id="BackNav"></i> E-Wallet</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="MainMenu.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="Profile.html"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="RequestDetail.html"><i class="fas fa-clipboard-list"></i>
+              Request </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="JobSchedule.html"><i class="fas fa-calendar-alt"></i> Job
+              Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="JobHistory.html"><i class="fas fa-history"></i> Job History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " style="  color: #ffc107;" href="Wallet.html"><i
+                class="fas fa-wallet"></i> e-wallet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " id="logout"><i class="fas fa-sign-out-alt"></i> Exit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portfolio Grid -->
+  <section class="bg-light page-section bg-dark" id="portfolio">
+    <div class="container ">
+
+
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h6 class="text-warning">Total Balance</h6>
+          <h1 class="text-warning" id="resultBalance">
+            <div class="spinner-border text-success" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+            <br>
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 2%;">
+      <div class="row ">
+        <div class="col">
+          <div class="mx-auto w-50 p-3 ">
+            <!--<button class="btn btn-md btn-outline-warning btn-block" id="modal_button"><i class="fas fa-plus"></i> Add Money</button>-->
+            <button class="btn btn-md btn-outline-warning btn-block" id="modal_withdraw"><i
+                class="fas fa-exchange-alt"></i> Transfer</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <section class=" page-section" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Transaction</h2>
+          <p>
+            <a class="btn btn-success" data-toggle="collapse" href="#collapseExample" role="button"
+              aria-expanded="false" aria-controls="collapseExample">
+              Payment
+            </a>
+            <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#WithdrawPanel"
+              aria-expanded="false" aria-controls="WithdrawPanel">
+              Withdraw
+            </button>
+          </p>
+          <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+              <h6>Payment</h6>
+              <hr>
+              <div id="ResultTransaction">
+              </div>
+            </div>
+
+          </div>
+          <div class="collapse" id="WithdrawPanel">
+            <div class="card card-body">
+              <h6>Transfer</h6>
+              <hr>
+              <div id="WithdrawTransaction">
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+  </section>
+  <!--
+    <div id="customerModal" class="modal fade">
+        <div class="modal-dialog">
+         <div class="modal-content">
+          <div class="modal-header">
+           <h4 class="modal-title">Create New Records </h4>
+          </div>
+          <div class="modal-body">
+            <label>Enter Amount </label>
+            <input type="text" name="Credit" id="Credit" class="form-control" />
+            <br />
+           </div>
+          <div class="modal-footer">
+           <input type="hidden" name="JobId" id="JobId" />
+           <input type="submit" name="action" id="action" class="btn btn-success" />
+           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+         </div>
+        </div>
+       </div>-->
+
+  <div id="withdrawModel" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create New Records </h4>
+        </div>
+        <div class="modal-body">
+          <h4 id="loading">
+            <div class="d-flex align-items-center">
+              <strong>Loading...</strong>
+              <div class="spinner-border ml-auto text-success" role="status" aria-hidden="true"></div>
+            </div>
+          </h4>
+          <div class="alert alert-danger" id="AlertForm" role="alert">
+            This is a danger alert—check it out!
+          </div>
+          <div id="BodyData">
+            <div class="row">
+              <div class="col">
+                <label>Card No </label>
+                <input type="text" name="Rate" id="CardNo" placeholder="Card No" class="form-control" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label>Month / Year </label>
+                <input type="text" name="JobType" placeholder="MM/YY" id="MonthYear" class="form-control" />
+              </div>
+              <div class="col">
+                <label>CV </label>
+                <input type="text" name="JobType" id="CV" placeholder="CV" class="form-control" />
+              </div>
+            </div>
+            <label>Full Name</label>
+            <input type="text" name="JobType" id="Name" class="form-control" placeholder="As Card" />
+
+            <label>Amount</label>
+            <input type="text" name="Amount" id="Amount" class="form-control" placeholder="RM" />
+          </div>
+        </div>
+        <div class="modal-footer">
+
+          <input type="submit" name="action" id="action" class="btn btn-success" />
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+  <script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+  <script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+
+</body>
+
+</html>
+<script type="text/javascript">
+  session();
+  function session() {
+
+    if (localStorage.getItem("id") === null) {
+      //...
+      alert("Please Sign In");
+      location.href = "index.html";
+
+    }
+  }
+  document.getElementById("logout").addEventListener("click", myFunction);
+  function myFunction() {
+
+    localStorage.removeItem("id");
+    localStorage.clear();
+    location.href = "index.html";
+  }
+
+  $(document).ready(function () {
+
+    fetchBalance();
+    fetchTransaction(); //This function will load all data on web page when page load
+    fetchWithdrawTransaction();
+
+    $('#loading').hide();
+
+
+    function fetchBalance() // This function will fetch data from table and display under <div id="result">
+    {
+      var action = "LoadBalance";
+      var id = localStorage.getItem("id");
+
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php", //Request send to "action.php page"
+        method: "POST", //Using of Post method for send data
+        data: { action: action, id: id }, //action variable data has been send to server
+        success: function (data) {
+
+          $('#resultBalance').html(data); //It will display data under div tag with id result
+        }
+      });
+    }
+    function fetchTransaction() // This function will fetch data from table and display under <div id="result">
+    {
+      var action = "LoadTransaction";
+      var id = localStorage.getItem("id");
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php", //Request send to "action.php page"
+        method: "POST", //Using of Post method for send data
+        data: { action: action, id: id }, //action variable data has been send to server
+        success: function (data) {
+          $('#ResultTransaction').html(data); //It will display data under div tag with id result
+        }
+      });
+    }
+    function fetchWithdrawTransaction() // This function will fetch data from table and display under <div id="result">
+    {
+      var action = "LoadWithdrawTransaction";
+      var id = localStorage.getItem("id");
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php", //Request send to "action.php page"
+        method: "POST", //Using of Post method for send data
+        data: { action: action, id: id }, //action variable data has been send to server
+        success: function (data) {
+          $('#WithdrawTransaction').html(data); //It will display data under div tag with id result
+        }
+      });
+    }
+
+
+    /*  //This JQuery code will Reset value of Modal item when modal will load for create new records
+     $('#modal_button').click(function(){
+      $('#customerModal').modal('show'); //It will load modal on web page
+      $('#Rate').val(''); //This will clear Modal first name textbox
+      $('#JobType').val(''); //This will clear Modal last name textbox
+      $('.modal-title').text("Add Money"); //It will change Modal title to Create new Records
+      $('#action').val('Reload'); //This will reset Button value ot Create
+     });*/
+
+    $('#modal_withdraw').click(function () {
+      $('#withdrawModel').modal('show'); //It will load modal on web page
+      $('#Amount').val(''); //This will clear Modal first name textbox
+      //$('#JobType').val(''); //This will clear Modal last name textbox
+      $('.modal-title').text("Transfer"); //It will change Modal title to Create new Records
+      $('#action').val('Confirm'); //This will reset Button value ot Create
+    });
+
+    /*
+       //This JQuery code is for Click on Modal action button for Create new records or Update existing records. This code will use for both Create and Update of data through modal
+       $('#action').click(function(){
+        var Credit = $('#Credit').val(); //Get the value of last name textbox
+        var action = $('#action').val();  //Get the value of Modal Action button and stored into action variable
+    
+        if(Credit != '') //This condition will check both variable has some value
+        {
+         $.ajax({
+          url : "http://localhost/MagiCleanVendor/www/php/display.php",    //Request send to "action.php page"
+          method:"POST",     //Using of Post method for send data
+          data:{ Credit:Credit, action:action}, //Send data to server
+          success:function(data){
+           alert(data);    //It will pop up which data it was received from server side
+           $('#customerModal').modal('hide'); //It will hide Customer Modal from webpage.
+           fetchBalance();    // Fetch User function has been called and it will load data under divison tag with id result
+          }
+         });
+        }
+        else
+        {
+         alert("All Fields are Required"); //If both or any one of the variable has no value them it will display this message
+        }
+       });*/
+
+    $('#action').click(function () {
+      var Amount = $('#Amount').val(); //Get the value of first name textbox.
+      var action = $('#action').val();  //Get the value of Modal Action button and stored into action variable
+      var CardNo = $('#CardNo').val();
+      var MonthYear = $('#MonthYear').val();
+      var CV = $('#CV').val();
+      var id = localStorage.getItem("id");
+
+      if (isNaN(Amount) && isNaN(CardNo) || isNaN(MonthYear) && isNaN(CV)) //This condition will check both variable has some value
+      {
+        /**/
+        alert("Please insert correct value");
+      }
+      else {
+        $('#BodyData').hide();
+        $('#loading').show();
+        $('#action').hide();
+
+        $.ajax({
+          url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php",    //Request send to "action.php page"
+          method: "POST",     //Using of Post method for send data
+          data: { Amount: Amount, action: action, id: id }, //Send data to server
+          success: function (data) {
+            //alert(data);    //It will pop up which data it was received from server side
+            //$('#withdrawModel').modal('hide'); //It will hide Customer Modal from webpage.
+            $('#loading').hide();
+            $('#BodyData').fadeIn();
+            $('#BodyData').html("<h4>Success <i class='<i class='far fa-check-circle text-success'></i></h4>");
+
+
+            fetchBalance();
+            fetchTransaction(); //This function will load all data on web page when page load
+            fetchWithdrawTransaction();
+            // Fetch User function has been called and it will load data under divison tag with id result
+          }
+        });
+      }
+    });
+    $('#AlertForm').hide();
+    $('#action').hide();
+
+    function CheckName() {
+      if ($.isNumeric($('#Name').val())) {
+        $('#AlertForm').html("<strong>Invalid Name !</strong> Cannot contain <strong>Numeric</strong> ");
+        $('#AlertForm').show();
+        $('#action').hide();
+      } else {
+        $('#AlertForm').hide();
+        $('#action').show();
+      }
+    }
+
+    function CheckCardNo() {
+      var CardNo = $('#CardNo').val().length;
+      if (CardNo < 16 || !$.isNumeric($('#CardNo').val())) {
+        $('#AlertForm').html("<strong>Invalid amount !</strong> Card Number must be <strong>Numeric</strong> and <strong>16 character</strong>");
+        $('#AlertForm').show();
+        $('#action').hide();
+
+      } else {
+        $('#AlertForm').hide();
+        $('#action').show();
+      }
+
+    }
+
+    function CheckAmount() {
+      var Amount = $('#Amount').val();
+
+      if (Amount <= 0) {
+        $('#AlertForm').html("<strong>Invalid amount !</strong> Please enter correct amount");
+        $('#AlertForm').show();
+        $('#action').hide();
+
+      } else {
+        $('#AlertForm').hide();
+        $('#action').show();
+      }
+
+    }
+
+    function CheckCV() {
+
+      var CV = $('#CV').val().length;
+      if (CV <= 0 || CV >= 4) {
+
+        $('#AlertForm').html("<strong>Invalid CV !</strong> Must be <strong>3 Character </strong>");
+        $('#AlertForm').show();
+        $('#action').hide();
+
+      } else if (!$.isNumeric($('#CV').val())) {
+
+        $('#AlertForm').html("<strong>Invalid CV !</strong> Please insert correct value");
+        $('#AlertForm').show();
+        $('#action').hide();
+
+      } else {
+
+        $('#AlertForm').hide();
+        $('#action').show();
+
+      }
+
+    }
+    $("#BackNav").on("click", function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+
+    $('#CardNo').focusout(function () {
+      CheckCardNo();
+    });
+
+    $('#Amount').focusout(function () {
+      CheckAmount();
+    });
+
+    $('#CV').focusout(function () {
+      CheckCV();
+    });
+
+    $('#Name').focusout(function () {
+      CheckName();
+    });
+
+  });
+</script>

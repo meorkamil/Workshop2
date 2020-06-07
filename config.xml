@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<name>MagiCleanVendor</name>
+<description>
+A vendor application for MagiClean
+</description>
+<author email="meorkamil97@gmail.com" href="http://mk97team.com">
+MK97 Development Team
+</author>
+<content src="index.html" />
+
+<preference name="Fullscreen" value="false" />
+<plugin name="cordova-plugin-splashscreen"/>
+<plugin name="cordova-plugin-whitelist" spec="1" />
+
+<platform name="android">
+
+
+  <icon src="resources/Icon.png" width="180" height="180" />
+</platform >
+  <access origin="*" />
+  <allow-intent href="http://*/*" />
+  <allow-intent href="https://*/*" />
+  <allow-intent href="tel:*" />
+  <allow-intent href="sms:*" />
+  <allow-intent href="mailto:*" />
+  <allow-intent href="geo:*" />
+
+  <platform name="android">
+  <allow-intent href="market:*" />
+  </platform>
+
+<platform name="android">
+  <!-- you can use any density that exists in the Android project -->
+  <splash src="resources/splashscreenhdpi.png" density="land-hdpi"/>
+  <splash src="resources/splashscreenldpi.png" density="land-ldpi"/>
+  <splash src="resources/splashscreenmdpi.png" density="land-mdpi"/>
+  <splash src="resources/splashscreenxhdpi.png" density="land-xhdpi"/>
+
+  <splash src="resources/splashscreenhdpi.png" density="port-hdpi"/>
+  <splash src="resources/splashscreenldpi.png" density="port-ldpi"/>
+  <splash src="resources/splashscreenmdpi.png" density="port-mdpi"/>
+  <splash src="resources/splashscreenxhdpi.png" density="port-xhdpi"/>
+</platform>
+
+</widget>

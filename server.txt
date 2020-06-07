@@ -1,0 +1,31 @@
+www.mk97team.com
+
+cpanel
+---------
+username: octmpyaq
+password: 4qUUubPEzQaP
+----------
+
+db
+----------
+dbname: octmpyaq_magiclean
+username: octmpyaq_user
+password: 1Q=I6PUcqLYo
+----
+Upload php file
+----------------
+-login cpanel
+-find and click file manager in the menu
+-Insert you php file in .. public_html/php
+
+
+
+
+dns
+
+ns41.domaincontrol.com
+ns42.domaincontrol.com
+
+-------ftp
+XGEg13y;+!YP
+Zjl4{hI3a4rD

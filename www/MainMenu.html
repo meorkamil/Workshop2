@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Main Menu</title>
+  <!-- Bootstrap core CSS -->
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+
+  </script>
+</head>
+
+<body id="page-top" onload="onLoad()">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top " id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">MagiClean</a>
+    </div>
+  </nav>
+  <section class="bg-light page-section" id="portfolio">
+    <div class="container">
+
+
+      <div class="col-md-4 col-sm-6 portfolio-item" id="loading">
+        <a class="portfolio-link" data-toggle="modal" ">
+        <div class=" portfolio-hover">
+          <div class="portfolio-hover-content">
+            <i class="fas fa-plus fa-3x"></i>
+          </div>
+      </div>
+      </a>
+      <div class="portfolio-caption">
+        <h1>
+          <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </h1>
+        <br>
+        <h6 class=""> loading</h6>
+
+      </div>
+    </div>
+    </div>
+  </section>
+  <!-- Services -->
+  <section class="page-section" id="services">
+
+    <div class="container">
+      <!-- Toast -->
+      <div class="toast" data-autohide="false">
+        <div class="toast-header">
+          <strong class="mr-auto text-dark" id="ToastHeader">Toast Header</strong>
+          <small class="text-muted"></small>
+          <button type="button" class="ml-2 mb-1 close" id="ToastCloseBtn" data-dismiss="toast">&times;</button>
+        </div>
+        <div class="toast-body" id="ToastBody">
+
+        </div>
+      </div>
+
+      <div class="row text-center" id="MenuDetail" style="margin-top: -5%;">
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-clipboard-list fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Request</h4>
+          <p class="text-muted">View request job from customer and grab it</p>
+          <a class="btn btn-lg btn-outline-warning btn-block text-dark " href="RequestDetail.html" id="modal_withdraw">
+            Request Details</a>
+          </br>
+        </div>
+
+        <div class="col-md-4 ">
+          <span class="fa-stack fa-4x ">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-calendar-alt fa-stack-1x fa-inverse"></i>
+          </span>
+          <h4 class="service-heading">Job Schedule</h4>
+          <p class="text-muted">Your job status</p>
+          <a class="btn btn-lg btn-outline-warning btn-block text-dark " href="JobSchedule.html" id="modal_withdraw">
+            Job Schedule</a>
+          <br>
+        </div>
+
+
+        <div class="col-md-4">
+          <span class="fa-stack fa-4x ">
+            <i class="fas fa-circle fa-stack-2x text-primary"></i>
+            <i class="fas fa-wallet fa-stack-1x fa-inverse "></i>
+          </span>
+          <h4 class="service-heading">Wallet</h4>
+          <p class="text-muted">Top up and view your wallet details</p>
+          <a class="btn btn-lg btn-outline-warning btn-block text-dark " href="Wallet.html" id="modal_withdraw"> View
+          </a>
+        </div>
+
+
+
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+</body>
+<!-- Bootstrap core JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+<script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+
+</html>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('#MenuDetail').hide();
+    LoadPaymentConfirm();
+
+    function LoadPaymentConfirm() // This function will fetch data from table and display under <div id="result">
+    {
+      var action = "LoadPaymentConfirm";
+      var id = localStorage.getItem("id");
+
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php", //Request send to "action.php page"
+        method: "POST", //Using of Post method for send data
+        data: { action: action, id: id }, //action variable data has been send to server
+        dataType: "json",
+        success: function (data) {
+          if (data.Total == "No") {
+            $('.toast').remove();
+            $('#portfolio').hide();
+            $('#MenuDetail').fadeIn();
+          } else {
+            $('#portfolio').hide();
+            $('#ToastBody').append('<a class="btn btn-default" href="JobSchedule.html" id="modal_withdraw"><i class="fas fa-external-link-alt"></i> Payment Confirmation <span class="badge badge-danger"> ' + data.Total + '</span></a > ');
+            $('#ToastHeader').html("<i class='far fa-bell text-danger'></i> Notification");
+            $('.toast').toast('show');
+            $('#ToastCloseBtn').hide();
+
+          }
+          // $('#ToastBody').append("Payment need to be confirm :" + data.Total); //It will display data under div tag with id result
+
+        }
+      });
+
+
+    }
+  });
+</script>

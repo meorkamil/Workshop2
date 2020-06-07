@@ -1,0 +1,346 @@
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MagiClean</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+
+  </script>
+</head>
+
+<body onload="onLoad()">
+
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-arrow-circle-left text-primary"
+          id="BackNav"></i> MagiClean</a>
+
+    </div>
+  </nav>
+
+
+  <section class="bg-light page-section" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Registration</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="team-member">
+
+            <form method="post" enctype="multipart/form-data">
+              <img class="mx-auto rounded-circle" id="avatar" alt="">
+              <h4 id="HeadName"></h4>
+          </div>
+
+          <div class="input-group mb-3">
+
+            <input type="file" id="image" name="image" onchange="previewFile()">
+          </div>
+          <div class="alert alert-danger" id="AlertForm" role="alert">
+            This is a danger alert—check it out!
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input type="EMAIL" id="Email" name="Email" class="form-control" placeholder="Email" />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="Password" class="form-control" name="Password" id="Password" placeholder="Password">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-check"></i></span>
+            </div>
+            <input type="Password" class="form-control" name="passwordconfirm" id="passwordconfirm"
+              placeholder=" Confirm Password">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user-tie"></i>
+              </span>
+            </div>
+            <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name">
+          </div>
+
+
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-phone"></i>
+              </span>
+            </div>
+            <input type="text" id="PhoneNo" name="PhoneNo" class="form-control" placeholder="Phone Number">
+          </div>
+
+          <div id="btn-edit" class="form-group text-center">
+            <input type="button" class="btn btn-primary btn-lg text-uppercase" id="edit-result-confirm"
+              value="Register">
+          </div>
+
+
+
+
+
+
+          </form>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Contact form JavaScript -->
+    <script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+    <script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+  function previewFile() {
+    var preview = document.querySelector('img');
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+    }
+  }
+  $(document).ready(function () {
+    $('#AlertForm').hide();
+
+    function CheckName() {
+      var Name = $('#Name').val();
+      if ($.isNumeric($('#Name').val())) {
+        $('#AlertForm').html("<strong>Invalid Name !</strong> Cannot contain <strong>Numeric</strong> ");
+        $('#AlertForm').show();
+
+      } else if (Name == "") {
+        $('#AlertForm').html("<strong>Invalid Name !</strong> Please enter your Name ");
+        $('#AlertForm').show();
+      } else {
+        $('#AlertForm').hide();
+      }
+    }
+    function CheckEmail() {
+      var Email = $('#Email').val();
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (!mailformat.test(Email)) {
+        $('#AlertForm').html("<strong>Invalid Email !</strong> Please enter correct email ");
+        $('#AlertForm').show();
+      } else {
+        $('#AlertForm').hide();
+      }
+    }
+    function CheckPassword() {
+      var pass1 = $('#Password').val();
+      var pass2 = $('#passwordconfirm').val();
+      var pass1length = $('#Password').val().length;
+      var pass2length = $('#passwordconfirm').val().length;
+      if (pass1 == "" || pass2 == "") {
+        $('#AlertForm').html("<strong>Enter password !</strong>  ");
+        $('#AlertForm').show();
+      } else if (pass1 == pass2) {
+
+        $('#AlertForm').hide();
+      } else if (pass1length <= 8 || pass2length <= 8) {
+        $('#AlertForm').html("<strong>Enter password !</strong> must more than<strong> 8 character </strong> ");
+        $('#AlertForm').show();
+      }
+      else {
+
+        $('#AlertForm').html("<strong>Password not match !</strong>  ");
+        $('#AlertForm').show();
+      }
+    }
+    function CheckPhoneNo() {
+
+
+      var PhoneNo = $('#PhoneNo').val();
+      var PhoneNoLength = $('#PhoneNo').val().length;
+      var pattern = /^[0-9-+]+$/;
+      if (!$.isNumeric(PhoneNo)) {
+        $('#AlertForm').html("<strong>Invalid Phone No !</strong> cannot contain alphabet  ");
+        $('#AlertForm').show();
+      }
+      else if (PhoneNoLength > 11) {
+        $('#AlertForm').html("<strong>Invalid Phone No !</strong> cannot less than 11 or 10  ");
+        $('#AlertForm').show();
+      } else if (PhoneNoLength < 10) {
+        $('#AlertForm').html("<strong>Invalid Phone No !</strong> cannot less than 11 or 10  ");
+        $('#AlertForm').show();
+      } else if (PhoneNo == "") {
+        $('#AlertForm').html("<strong>Invalid Phone No !</strong>   ");
+        $('#AlertForm').show();
+      }
+
+    }
+    function CheckImage() {
+
+
+      var image = $('#image').val();
+
+
+      if (image == '') {
+        $('#AlertForm').html("<strong>Select Image !</strong>  ");
+        $('#AlertForm').show();
+      }
+      else {
+
+        $('#AlertForm').hide();
+      }
+
+    }
+    $("#BackNav").on("click", function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+    $('#Name').focusout(function () {
+      CheckName();
+    });
+
+    $('#Email').focusout(function () {
+      CheckEmail();
+    });
+
+    $('#passwordconfirm').focusout(function () {
+      CheckPassword();
+    });
+
+    $('#PhoneNo').focusout(function () {
+      CheckPhoneNo();
+    });
+
+    $('#image').focusout(function () {
+      CheckImage();
+    });
+
+    $("#alert-register").hide();
+
+    $("#edit-result-confirm").click(function (e) {
+      e.preventDefault();
+      console.log('clicked');
+
+
+      var formData = new FormData();
+      formData.append('image', $('#image')[0].files[0]);
+      formData.append('Email', $('#Email').val());
+      formData.append('Password', $('#Password').val());
+      formData.append('passwordconfirm', $('#passwordconfirm').val());
+      formData.append('Name', $('#Name').val());
+      formData.append('PhoneNo', $('#PhoneNo').val());
+
+
+
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/insert.php",
+        type: "POST",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+
+        success: function (data) {
+
+          if (data.result == "success") {
+
+            alert("Successful register!! Please wait for confirmation");
+            location.href = "login.html";
+            console.log(data);
+          } else if (data.result == "error") {
+            console.log(data);
+            alert("Cannot registered");
+          }
+
+
+
+        }
+      });
+    });
+  });
+</script>

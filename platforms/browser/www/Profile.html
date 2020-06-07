@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MagiClean</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+
+  </script>
+</head>
+<style>
+
+</style>
+
+<body id="page-top" onload="onLoad()">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-arrow-circle-left text-primary"
+          id="BackNav"></i> MagiClean</a> <button class="navbar-toggler navbar-toggler-right" type="button"
+        data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="MainMenu.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " style="  color: #ffc107;" href="Profile.html"><i
+                class="fas fa-user"></i> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="RequestDetail.html"><i class="fas fa-clipboard-list"></i>
+              Request </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="JobSchedule.html"><i class="fas fa-calendar-alt"></i> Job
+              Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="JobHistory.html"><i class="fas fa-history"></i> Job
+              History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="Wallet.html"><i class="fas fa-wallet"></i> e-wallet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " id="logout"><i class="fas fa-sign-out-alt"></i> Exit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="bg-light page-section" id="team">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Profile</h2>
+
+          <div id="loading">
+            <h1>
+              <div class="spinner-border text-success" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
+
+            </h1>
+            <h6 class=""> loading</h6>
+          </div>
+
+
+        </div>
+      </div>
+
+      <div class="row" id="data">
+        <div class="col-sm-4">
+          <div class="team-member">
+
+            <form method="post" enctype="multipart/form-data">
+              <img class="mx-auto rounded-circle" id="avatar" alt="">
+              <h4 id="HeadName"></h4>
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="alert alert-danger" id="AlertForm" role="alert">
+              This is a danger alert—check it out!
+            </div>
+            <input type="file" id="image" name="image" onchange="previewFile()">
+          </div>
+
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-envelope"></i>
+              </span>
+            </div>
+            <input type="EMAIL" id="Email" name="Email" class="form-control" placeholder="Email" readonly="readonly" />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-key"></i></span>
+            </div>
+            <input type="Password" class="form-control" name="Password" id="Password" placeholder="Password">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-check"></i></span>
+            </div>
+            <input type="Password" class="form-control" name="passwordconfirm" id="passwordconfirm"
+              placeholder=" Confirm Password">
+          </div>
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-user-tie"></i>
+              </span>
+            </div>
+            <input type="text" id="Name" name="Name" class="form-control" placeholder="Full Name">
+          </div>
+
+
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-phone"></i>
+              </span>
+            </div>
+            <input type="text" id="PhoneNo" name="PhoneNo" class="form-control" placeholder="Phone Number">
+          </div>
+          <div id="btn-edit" class="form-group text-center">
+            <input type="button" class="btn btn-primary text-uppercase" id="edit-result-confirm" value="Update">
+          </div>
+
+
+
+
+
+
+          </form>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <!-- Navigation Link Bottom -->
+  <!-- <nav class="navbar navbar-dark fixed-bottom navbar-expand" id="mainNav">
+                 <div class="container-fluid">
+
+                     <a class="nav-link nav-text-white nav-item" href="MainMenuHousehold.html">Home</a>
+                     <a class="nav-link nav-text-white nav-item" href="ViewRequestHousehold.html">Request</a>
+                     <a class="nav-link nav-text-white nav-item" href="ViewWalletHousehold.html">Wallet</a>
+                     <a class="nav-link nav-text-white nav-item" href="ViewProfileHousehold.html">Profile</a>
+
+                 </div>
+             </nav> -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+  <script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+  <script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+  <!-- <script src="bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.min.js"></script> -->
+  <!-- <script src="bootstrap-input-spinner-master/src/bootstrap-input-spinner.js"></script> -->
+
+</body>
+
+<script type="text/javascript">
+  document.getElementById("logout").addEventListener("click", myFunction);
+  function myFunction() {
+
+    localStorage.removeItem("id");
+    localStorage.clear();
+    location.href = "index.html";
+  }
+  $("#BackNav").on("click", function (e) {
+    e.preventDefault();
+    window.history.back();
+  });
+
+  function previewFile() {
+    var preview = document.querySelector('img');
+    var file = document.querySelector('input[type=file]').files[0];
+    var reader = new FileReader();
+
+    reader.onloadend = function () {
+      preview.src = reader.result;
+    }
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      preview.src = "";
+    }
+  }
+
+  $('#AlertForm').hide();
+
+  const id = localStorage.getItem("id");
+  console.log(id);
+  $(document).ready(function () {
+    $('#data').hide();
+    var data = 'id=' + id;
+    $.ajax({
+      url: "http://mk97team.com/php/vendor/view.php",
+      type: "POST",
+      data: JSON.stringify({ "id": id }),
+      crossDomain: true,
+      cache: false,
+      success: function (data) {
+
+        $('#loading').hide();
+        $('#data').fadeIn(2000);
+        console.log(data);
+        $('#Email').val(data.Email);
+        $('#Password').val(data.Password);
+        $('#passwordconfirm').val(data.passwordconfirm);
+        $('#Name').val(data.Name);
+        $('#HeadName').html(data.Name);
+        $('#PhoneNo').val(data.PhoneNo);
+        $('#avatar').val(data.ProfileImage);
+        const ProfileImage = data.ProfileImage ? 'data:image/jpeg;base64,' + data.ProfileImage : "php/profilepic/avatar2.png";
+        document.getElementById("avatar").src = ProfileImage;
+      },
+      error: function (data) {
+        alert("Error");
+      }
+    });
+
+    // $("#state-confirm").click(function(e){
+    //     $('#state-text').val($("#state option:selected").val());
+    //     $('#state-box').modal('hide');
+    // });
+
+    // $("#password").on("change",function(e){
+    //     $("#reconfirm-password").show();
+    //     $("#re-password").prop("readonly", false);
+    //     $("#re-password").val("");
+    // });
+
+    function CheckImage() {
+
+
+      var image = $('#image').val();
+
+
+      if (image == '') {
+        $('#AlertForm').html("<strong>Select Image !</strong>  ");
+        $('#AlertForm').show();
+      }
+      else {
+
+        $('#AlertForm').hide();
+      }
+
+    }
+    $('#image').focusout(function () {
+      CheckImage();
+    });
+
+
+
+    $("#edit-result-confirm").click(function (e) {
+      e.preventDefault();
+      console.log('clicked');
+      var VendorId = id;
+      var formData = new FormData();
+      formData.append('image', $('#image')[0].files[0]);
+      formData.append('VendorId', id);
+      formData.append('Email', $('#Email').val());
+      formData.append('Password', $('#Password').val());
+      formData.append('passwordconfirm', $('#passwordconfirm').val());
+      formData.append('Name', $('#Name').val());
+      formData.append('PhoneNo', $('#PhoneNo').val());
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/update.php",
+        type: "POST",
+        data: formData,
+        dataType: "json",
+        processData: false,
+        contentType: false,
+
+        success: function (data) {
+          if (data.result == "kid") {
+            alert("Password must be at least 8 characters");
+          }
+          else if (data.result == "mismatch") {
+            alert("Your password did not match");
+          }
+          else if (data.result == "wak") {
+            alert("Full Name must only contain letters and whitespace!");
+          }
+          else if (data.result == "duck") {
+            alert("Invalid phone number!");
+          }
+          else if (data.result == "success") {
+            alert("Data has been update!");
+            console.log(data);
+          }
+
+        },
+        error: function (data) {
+          alert("Error");
+          console.log(data.result);
+        }
+      });
+    });
+
+
+
+
+  });
+
+
+</script>
+
+</html>

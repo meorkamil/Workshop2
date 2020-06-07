@@ -1,0 +1,300 @@
+<!DOCTYPE html>  
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  
+  <title>Vendor List</title>
+  
+	<!-- Template for image data 
+	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script> -->            
+  
+ <!-- Bootstrap core CSS -->
+ <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+ <!-- Custom fonts for this template -->
+ <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+ <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+ <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+ <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+
+ <!-- Custom styles for this template -->
+ <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+ 
+	
+	
+<body id="page-top">
+
+  <!-- Navigation -->
+	<nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark" id="mainNav">
+        <div class="container">
+		<a class="navbar-brand" href="adminMenu.html">MagiClean</a>
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+				<ul class="navbar-nav text-uppercase ml-auto">
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger " href="adminMenu.html">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link js-scroll-trigger " href="login.html">Logout</a>
+					</li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+	
+	
+    <section id="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="text-uppercase section-heading">vendor</h2>
+                    <h3 class="text-muted section-subheading">Click the list to preview the details</h3>
+					</br>
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="clearfix"></div>
+            </div>
+        </div>
+		<!-- Search -->
+			<div class="form-group">
+				<div class="container" style="width:1000px;">
+					<div class="input-group">
+						<input type="text" name="search_text" id="search_text" placeholder="Search by Vendor Name" class="form-control" />
+					</div>
+				</div>
+				<br />
+					<div id="result"></div>
+					</div>
+		<!-- Search -->
+		
+		  <div class="container" style="width:1000px;">  
+			   <br />
+			   <div id="image_data"></div>	
+		  </div> 
+		  
+		  <div id="dataModal" class="modal fade">  
+			  <div class="modal-dialog">  
+				   <div class="modal-content">  
+						<div class="modal-header">  
+							 <button type="button" class="close" data-dismiss="modal">&times;</button>  
+							 <h4 class="modal-title">Employee Details</h4>  
+						</div>  
+						<div class="modal-body" id="employee_detail">  
+						</div>  
+						<div class="modal-footer">  
+							 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
+						</div>  
+				   </div>  
+			  </div>  
+		 </div>  
+		 <!--
+		  <div id="add_data_Modal" class="modal fade"> 
+		  <div class="modal-dialog"> 
+			
+			<div class="modal-content">  
+                <div class="modal-header">  
+					 <h6 class="modal-title">Vendor Approval Registration Form</h6> 
+                </div> 
+		  
+		  <div class="modal-body">  
+                     <form method="post" id="insert_form">   
+						  <input type="hidden" name="VendorId" id="VendorId" />  
+                          <label>Name</label>  
+							<input type="text" name="Name" id="Name" class="form-control" />  
+                          <br />  
+                          <label>Phone No</label>  
+							<input type="text" name="PhoneNo" id="PhoneNo" class="form-control" />  
+                          <br /> 
+						  <label>Email</label>  
+							<input type="text" name="Email" id="Email" class="form-control" />  
+                          <br /> 
+						  <label>Status</label>  
+							  <select name="Verified" id="Verified" class="form-control">  
+								   <option value="1">1</option>  
+								   <option value="0">0</option>  
+							  </select>  
+                          <br />  
+							  <input type="submit" name="update" id="update" value="Update" class="btn btn-success" />  
+                     </form>  
+                </div>  
+                <div class="modal-footer">  
+                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>  
+                </div> 
+			</div> 
+	</section>
+	-->
+	
+ 
+ <!-- This is Customer Modal. It will be use for Create new Records and Update Existing Records!-->
+ <div id="customerModal" class="modal fade">
+	<div class="modal-dialog">
+	 <div class="modal-content">
+	  <div class="modal-header">
+	   <h4 class="modal-title">Create New Records</h4>
+	  </div>
+	  <div class="modal-body">
+		 
+			  <label>Name</label>  
+			  <input type="text" name="Name" id="name" class="form-control" />  
+			<br />  
+			<label>Phone No</label>  
+			  <input type="text" name="PhoneNo" id="phoneno" class="form-control" />  
+			<br /> 
+			<label>Email</label>  
+			  <input type="text" name="Email" id="email" class="form-control" />  
+			<br /> 
+			<label>Status</label>  
+				<select name="verified" id="verified" class="form-control">  
+					 <option value="1">1</option>  
+					 <option value="0">0</option>  
+				</select>  
+			<br />  
+		 
+		 </div>
+	  <div class="modal-footer">
+		  <input type="hidden" name="request_id" id="request_id" />
+	   <input type="submit" name="action" id="action" class="btn btn-success" />
+	   <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	  </div>
+	 </div>
+	</div>
+   </div>
+  
+	  
+</body>
+</html>
+
+<!-- Bootstrap core JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+<script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+ 
+<script type="text/javascript" >
+	$(document).ready(function(){
+	 load_data();
+	 fetchUser(); 
+	 
+	 function load_data(query)
+	 {
+	  $.ajax({
+	   url:"php/vendorView.php",
+	   method:"POST",
+	   data:{query:query},
+	   success:function(data)
+	   {
+		$('#image_data').html(data); 
+	   }
+	  });
+	 }
+	 
+	 $('#search_text').keyup(function(){
+		  var search = $(this).val();
+		  if(search != '')
+		  {
+		   load_data(search);
+		  }
+		  else
+		  {
+		    fetchUser(); 
+		  }
+		 });
+	 
+	 function fetchUser() 
+	 {
+	  var action = "fetch";
+	  $.ajax({
+	   url : "php/vendorView.php", 
+	   method:"POST", 
+	   data:{action:action}, 
+	   success:function(data){
+		$('#image_data').html(data); 
+	   }
+	  });
+	 }
+	
+	 
+	 $('#modal_button').click(function(){
+	  $('#customerModal').modal('show'); 
+	  $('#name').val(''); 
+	  $('#email').val(''); 
+	  $('.modal-title').text("Create New Records"); 
+	  $('#action').val('Create'); 
+	 });
+		
+	 $('#action').click(function(){
+	  
+	  var id = $('#request_id').val();  
+	  var action = $('#action').val(); 
+	  var verified = $('#verified').val();  
+	  if(verified != '' ) 
+	  {
+	   $.ajax({
+		url : "php/vendorView.php",    
+		method:"POST",     
+		data:{ id:id, verified:verified, action:action}, 
+		success:function(data){
+		 alert(data);    
+		 $('#customerModal').modal('hide'); 
+		 fetchUser();    
+		}
+	   }); 
+	  }
+	  else
+	  {
+	   alert("Fields are Required"); 
+	  }
+	 });
+	
+   
+   $(document).on('click', '.selectvendor', function(){
+  
+		  var id = $(this).attr("id"); 
+		  var action = "SelectVendor";   
+		
+		  $.ajax({
+  
+		  url:"php/vendorView.php",  
+		  method:"POST",    
+		  data:{id:id, action:action},
+		  dataType:"json",   
+		  success:function(data){
+  
+		  $('#customerModal').modal('show');   
+		  $('.modal-title').text("Update Records"); 
+		  $('#action').val("Update");     
+		  $('#request_id').val(id);     
+		  $('#name').val(data.name);  
+		  $('#email').val(data.email);  
+		  $('#phoneno').val(data.phoneno);  
+		  $('#verified').val(data.verified); 
+	}
+	});
+	});
+	  
+	 
+	});
+	
+	</script>
+	 

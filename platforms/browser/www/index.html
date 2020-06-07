@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MagiClean</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+  </script>
+
+</head>
+
+<body id="page-top" onload="onLoad()">
+
+  <!-- Navigation -->
+
+
+
+
+
+  <header class="masthead">
+    <div class="container">
+      <div class="intro-text">
+
+        <img src="resources/icon-with-name.png" class="img-fluid" alt="Responsive image">
+
+        <a class="btn btn-primary btn-lg text-uppercase" href="login.html"><i class="fas fa-sign-in-alt"></i>
+          Login</a><br><br>
+        <a class="btn btn-danger btn-sm text-uppercase" onclick="exitFromApp()" id="ExitButton"><i
+            class="fas fa-times"></i>
+          Exit</a>
+
+      </div>
+    </div>
+  </header>
+
+
+
+</body>
+<!-- Begin page content -->
+
+</html>
+<!-- Bootstrap core JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+<script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+
+<script>
+  $(document).ready(function () {
+
+    $('#ExitButton').click(function () {
+      console.log("exit");
+
+      device.exitApp();
+      navigator.device.exitApp();
+
+    })
+
+  });
+
+</script>

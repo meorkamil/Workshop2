@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Request Details</title> <!-- Bootstrap core CSS -->
+
+
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+
+  </script>
+</head>
+
+<body id="page-top" onload="onLoad()">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-arrow-circle-left text-primary"
+          id="BackNav"></i>
+        Request
+        Details</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+        data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
+        aria-label="Toggle navigation">
+        Menu
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav text-uppercase ml-auto">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="MainMenu.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="Profile.html"><i class="fas fa-user"></i> Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " style="  color: #ffc107;" href="RequestDetail.html"><i
+                class="fas fa-clipboard-list"></i>Request </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="JobSchedule.html"><i class="fas fa-calendar-alt"></i> Job
+              Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="JobHistory.html"><i class="fas fa-history"></i> Job History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " href="Wallet.html"><i class="fas fa-wallet"></i> e-wallet</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger " id="logout"><i class="fas fa-sign-out-alt"></i> Exit</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Portfolio Grid -->
+  <section class="bg-light page-section" id="portfolio">
+    <div class="container">
+
+
+      <div class="col-md-4 col-sm-6 portfolio-item">
+        <a class="portfolio-link" data-toggle="modal" ">
+        <div class=" portfolio-hover">
+          <div class="portfolio-hover-content">
+            <i class="fas fa-plus fa-3x"></i>
+          </div>
+      </div>
+      </a>
+      <div class="portfolio-caption">
+        <h1>
+          <div class="spinner-border text-success" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </h1>
+        <br>
+        <h6 class=""> loading</h6>
+
+      </div>
+    </div>
+
+
+
+    </div>
+    <!-- Display Job-->
+
+    </div>
+  </section>
+  <div class="container" style="margin-top: 15%;">
+
+
+    <div id="result"></div>
+  </div>
+
+  <!-- It will show Modal for Create new Records !-->
+  <!--
+   <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="close-modal" data-dismiss="modal">
+          <div class="lr">
+            <div class="rl"></div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8 mx-auto">
+              <div class="modal-body">
+                
+                <h2 class="text-uppercase">House Clean</h2>
+                <img class="img-fluid d-block mx-auto" src="img/portfolio/01-full.jpg" alt="">
+                <div class="row">
+                        <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text"><i class="fas fa-user-tie"></i>
+                                  </span>
+                                </div>
+                                <input type="text" id="username" class="form-control" placeholder="Ahmad_fuad" disabled>
+                              </div>
+                  <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text"><i class="fas fa-map-marker"></i></span>
+                        </div>
+                      <textarea class="form-control" disabled>DT 4123 Jalan Murai Jaya</textarea>
+                      </div>
+                      <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text"><i class="fas fa-calendar"></i></span>
+                            </div>
+                            <input type="text" id="username" class="form-control" placeholder="Date: January 2017" disabled>
+                          </div>
+                </div>
+               
+                <div class="row ">
+                    <div class="col">
+                        <button class="btn btn-success" data-dismiss="modal" type="button">
+                            <i class="fas fa-check"></i>
+                            Accept Request</button>
+                    </div>
+                    <div class="col">
+                            <button class="btn btn-primary" data-dismiss="modal" type="button">
+                        <i class="fas fa-times"></i>
+                        Close Request</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  Modal 1 -->
+
+
+  <!-- This is Customer Modal. It will be use for Create new Records and Update Existing Records!-->
+  <div id="customerModal" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Create New Records</h4>
+        </div>
+        <div class="modal-body">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Username" name="Name" id="Name" readonly>
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1"><i class="far fa-calendar-alt"></i></span>
+            </div>
+            <input type="text" class="form-control" name="Date" id="Date" readonly>
+          </div>
+          <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+            </div>
+            <textarea class="form-control" id="Address" name="Address" readonly></textarea>
+          </div>
+          </br>
+          <div class="row">
+            <div class="col">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-clock"></i></span>
+                </div>
+                <input type="text" class="form-control"" name=" Time" id="Time" aria-label="Username" readonly>
+              </div>
+            </div>
+            <div class="col">
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-stopwatch"></i></span>
+                </div>
+                <input type="text" class="form-control" name="Duration" id="Duration" readonly>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <input type="hidden" name="customer_id" id="customer_id" />
+          <input type="hidden" name="Type" id="Type" />
+          <input type="submit" name="action" id="action" class="btn btn-success" />
+          <button type="button" class="btn btn-default" data-dismiss="modal">close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+
+</html>
+<!-- Bootstrap core JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+<script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+<!-- Contact form JavaScript -->
+<script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+<script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+<!-- Custom scripts for this template -->
+<script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+
+<script type="text/javascript">
+  document.getElementById("logout").addEventListener("click", myFunction);
+  function myFunction() {
+
+    localStorage.removeItem("id");
+    localStorage.clear();
+    location.href = "index.html";
+
+  }
+  session();
+  function session() {
+
+    if (localStorage.getItem("id") === null) {
+      //...
+      alert("Please Sign In");
+      location.href = "index.html";
+
+    }
+  }
+  $(document).ready(function () {
+    fetchUser(); //This function will load all data on web page when page load
+    $('.toast').toast('show');
+    function fetchUser() // This function will fetch data from table and display under <div id="result">
+    {
+      var action = "Load";
+      $.ajax({
+        url: "php/vendor/MagiCleanVendorApp.php", //Request send to "action.php page"
+        method: "POST", //Using of Post method for send data
+        data: { action: action }, //action variable data has been send to server
+        success: function (data) {
+          $('#result').hide();
+          $('#portfolio').fadeOut(290);
+          $('#result').html(data).fadeIn(2000);//It will display data under div tag with id result
+        }
+      });
+    }
+
+    //This JQuery code will Reset value of Modal item when modal will load for create new records
+    $('#modal_button').click(function () {
+      $('#customerModal').modal('show'); //It will load modal on web page
+      $('#Rate').val(''); //This will clear Modal first name textbox
+      $('#JobType').val(''); //This will clear Modal last name textbox
+      $('.modal-title').text("Create New Records"); //It will change Modal title to Create new Records
+      $('#action').val('Create'); //This will reset Button value ot Create
+      $('#Type').val('Type');
+    });
+
+    //This JQuery code is for Click on Modal action button for Create new records or Update existing records. This code will use for both Create and Update of data through modal
+    $('#action').click(function () {
+
+      var id = $('#customer_id').val();  //Get the value of hidden field customer id
+      var action = $('#action').val();  //Get the value of Modal Action button and stored into action variable
+      var Type = $('#Type').val();
+      var VendorId = localStorage.getItem("id");
+      if (id != '' && Type != '') //This condition will check both variable has some value
+      {
+        $.ajax({
+          url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php",    //Request send to "action.php page"
+          method: "POST",     //Using of Post method for send data
+          data: { id: id, Type: Type, action: action, VendorId: VendorId }, //Send data to server
+          success: function (data) {
+            alert(data);    //It will pop up which data it was received from server side
+            $('#customerModal').modal('hide'); //It will hide Customer Modal from webpage.
+            fetchUser();    // Fetch User function has been called and it will load data under divison tag with id result
+          }
+        });
+      }
+      else {
+        alert("Both Fields are Required"); //If both or any one of the variable has no value them it will display this message
+      }
+    });
+    $("#BackNav").on("click", function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+
+    $(document).on('click', '.update', function () {
+      var id = $(this).attr("id"); //This code will fetch any customer id from attribute id with help of attr() JQuery method
+      var action = "SelectStart";
+      var VendorId = localStorage.getItem("id");  //We have define action variable value is equal to select
+
+      $.ajax({
+        url: "http://mk97team.com/php/vendor/MagiCleanVendorApp.php",   //Request send to "action.php page"
+        method: "POST",    //Using of Post method for send data 
+        data: { id: id, action: action, VendorId: VendorId },//Send data to server
+        dataType: "json",   //Here we have define json data type, so server will send data in json format.
+        success: function (data) {
+          $('#customerModal').modal('show');   //It will display modal on webpage
+          $('.modal-title').text(data.StatusType); //This code will change this class text to Update records
+          $('#action').val("Accept");     //This code will change Button value to Update
+          $('#customer_id').val(id);     //It will define value of id variable to this customer id hidden field
+          $('#Name').val(data.Name);  //It will assign value to modal first name texbox
+          $('#Date').val(data.Date);
+          $('#Address').val(data.Address);  //It will assign value of modal last name textbox
+          $('#Time').val(data.Time);
+          $('#Type').val(data.Type);
+          $('#Duration').val(data.Duration + " Hours");//It will assign value of modal last name textbox
+        }
+      });
+    });
+    $(document).on('click', '#Address', function () {
+      var address = $('#Address').val(); //This code will fetch any customer id from attribute id with help of attr() JQuery method
+      location.href = 'https://www.google.com/maps/dir/?api=1&destination=' + address;
+    });
+
+  });
+</script>

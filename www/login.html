@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>MagiClean</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="startbootstrap-agency-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="startbootstrap-agency-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Custom styles for this template -->
+  <link href="startbootstrap-agency-gh-pages/css/agency.min.css" rel="stylesheet">
+
+  <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+  <script type="text/javascript" charset="utf-8" src="js/cordova.js"></script>
+  <script type="text/javascript" src="js/ExitApp.js"></script>
+  <script type="text/javascript" charset="utf-8">
+
+    // Call onDeviceReady when Cordova is loaded.
+    //
+    // At this point, the document has loaded but cordova-2.5.0.js has not.
+    // When Cordova is loaded and talking with the native device,
+    // it will call the event `deviceready`.
+    //
+    function onLoad() {
+      document.addEventListener("deviceready", onDeviceReady, false);
+    }
+
+    // Cordova is loaded and it is now safe to call Cordova methods
+    //
+    function onDeviceReady() {
+      // Register the event listener
+      document.addEventListener("backbutton", onBackKeyDown, false);
+    }
+
+    // Handle the back button
+    //
+    function onBackKeyDown() {
+      alert("Cannot use device button");
+    }
+
+    function exitFromApp() {
+      navigator.app.exitApp();
+    }
+
+  </script>
+</head>
+
+<body id="page-top" onload="onLoad()">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top"><i class="fas fa-arrow-circle-left text-primary"
+          id="BackNav"></i> MagiClean</a>
+
+    </div>
+  </nav>
+
+  <!-- Portfolio Grid -->
+  <section class="bg-light page-section" id="portfolio">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <h2 class="section-heading text-uppercase">Login</h2>
+          <h3 class="section-subheading text-muted">Start your service now</h3>
+        </div>
+      </div>
+      <div class="col-lg-12">
+        <form id="contactForm" name="sentMessage" novalidate="novalidate">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-user-tie"></i>
+                  </span>
+                </div>
+                <input type="email" id="email" name="email" class="form-control" placeholder="Email">
+              </div>
+              <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="fas fa-key"></i></span>
+                </div>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password">
+              </div>
+
+            </div>
+
+            <div class="clearfix"></div>
+            <div class="col-lg-12 text-center" style="margin-top: 10%; margin-bottom: 16%;">
+              <div id="success"></div>
+              <button id="insert" class="btn btn-primary btn-xl text-uppercase" type="button">Login</button>
+              <br>
+              <br>
+              <a class="btn btn-success btn-sm text-uppercase" href="register.html"><i class="fa fa-user-plus"></i> Sign
+                Up</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/vendor/jquery/jquery.min.js"></script>
+  <script src="startbootstrap-agency-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Plugin JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Contact form JavaScript -->
+  <script src="startbootstrap-agency-gh-pages/js/jqBootstrapValidation.js"></script>
+  <script src="startbootstrap-agency-gh-pages/js/contact_me.js"></script>
+
+  <!-- Custom scripts for this template -->
+  <script src="startbootstrap-agency-gh-pages/js/agency.min.js"></script>
+
+</body>
+
+</html>
+<script type="text/javascript" src="js/jquery.js"></script> 
+<script type="text/javascript">
+  $(document).ready(function () {
+    $("#BackNav").on("click", function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+    $("#insert").click(function () {
+      var email = $("#email").val();
+      var password = $("#password").val();
+      var dataString = "&email=" + email + "&password=" + password;
+      console.log(email);
+      $.ajax({
+        type: "POST",
+        url: "http://mk97team.com/php/vendor/login.php",
+        data: { email: email, password: password },
+        crossDomain: true,
+        cache: false,
+        success: function (data) {
+          console.log(data);
+          if (data.result == "success") {
+            localStorage.setItem("id", data.id);
+            $("#insert").val('Done');
+
+            alert("Welcome to MagiCleanVendor");
+            console.log(localStorage.getItem('id'));
+            location.href = "MainMenu.html";
+
+          }
+          else if (data.result == "verified") {
+            alert("Your account is not verified by Admin. Please wait");
+
+          }
+
+          else if (data.result == "error") {
+            alert("Wrong email or password. Try again!!");
+
+          }
+        }
+      });
+
+    });
+  });
+</script>
